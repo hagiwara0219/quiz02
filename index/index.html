@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送迎会クイズ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quiz-container">
+        <!-- 1問目 -->
+        <div id="question1" class="question">
+            <h2>質問1: 日本の首都はどこですか？</h2>
+            <button onclick="checkAnswer('question1', '正解')">東京</button>
+            <button onclick="checkAnswer('question1', '不正解')">大阪</button>
+            <button onclick="checkAnswer('question1', '不正解')">京都</button>
+        </div>
+
+        <!-- 2問目 -->
+        <div id="question2" class="question" style="display: none;">
+            <h2>質問2: 富士山の高さはどのくらいですか？</h2>
+            <button onclick="checkAnswer('question2', '不正解')">2500メートル</button>
+            <button onclick="checkAnswer('question2', '不正解')">3000メートル</button>
+            <button onclick="checkAnswer('question2', '正解')">3776メートル</button>
+        </div>
+
+        <!-- 3問目 -->
+        <div id="question3" class="question" style="display: none;">
+            <h2>質問3: 日本の通貨は何ですか？</h2>
+            <button onclick="checkAnswer('question3', '正解')">円</button>
+            <button onclick="checkAnswer('question3', '不正解')">ドル</button>
+            <button onclick="checkAnswer('question3', '不正解')">ユーロ</button>
+        </div>
+
+        <!-- プレゼントページ -->
+        <div id="present-page" style="display: none;">
+            <h2>おめでとうございます！プレゼントに辿り着きました！</h2>
+            <p>ここにプレゼントの内容を表示することができます。</p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, result) {
+            if (result === '正解') {
+                alert('正解！');
+                document.getElementById(questionId).style.display = 'none';
+
+                if (questionId === 'question1') {
+                    document.getElementById('question2').style.display = 'block';
+                } else if (questionId === 'question2') {
+                    document.getElementById('question3').style.display = 'block';
+                } else if (questionId === 'question3') {
+                    document.getElementById('present-page').style.display = 'block';
+                }
+            } else {
+                alert('不正解！もう一度試してみてください。');
+            }
+        }
+    </script>
+
+</body>
+</html>
