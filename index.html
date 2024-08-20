@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>送迎会クイズ</title>
+    <title>100万円分ギフトサイト</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
+            background-image: url('../quiz02/images.png');
+            /* 背景画像のURLを指定 */
+            background-size: cover;
+            /* 画像を全体にフィットさせる */
+            /* background-position: center; */
+            /* 画像の位置を中央に */
+            background-repeat: no-repeat;
+            /* 画像を繰り返さない */
+            color: rgba(255, 255, 255, 0.61);
+            /* 背景とテキストが見やすいようにテキストカラーを白に */
         }
+
+        h2 {
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
         .question {
             margin-bottom: 20px;
         }
+
         button {
             padding: 10px 20px;
             margin: 5px;
@@ -20,37 +41,37 @@
         }
     </style>
 </head>
-<body>
 
+<body>
     <div id="quiz-container">
         <!-- 1問目 -->
         <div id="question1" class="question">
-            <h2>質問1: 日本の首都はどこですか？</h2>
-            <button onclick="checkAnswer('question1', '正解')">東京</button>
-            <button onclick="checkAnswer('question1', '不正解')">大阪</button>
-            <button onclick="checkAnswer('question1', '不正解')">京都</button>
+            <h2>質問1: ギフテッド?</h2>
+            <button onclick="checkAnswer('question1', '正解')">ワークス</button>
+            <button onclick="checkAnswer('question1', '不正解')">ワーカー</button>
+            <button onclick="checkAnswer('question1', '不正解')">ワーキング</button>
         </div>
 
         <!-- 2問目 -->
         <div id="question2" class="question" style="display: none;">
-            <h2>質問2: 富士山の高さはどのくらいですか？</h2>
-            <button onclick="checkAnswer('question2', '不正解')">2500メートル</button>
-            <button onclick="checkAnswer('question2', '不正解')">3000メートル</button>
-            <button onclick="checkAnswer('question2', '正解')">3776メートル</button>
+            <h2>質問2: 萩原の下の名前は？</h2>
+            <button onclick="checkAnswer('question2', '不正解')">陽三郎</button>
+            <button onclick="checkAnswer('question2', '不正解')">陽二郎</button>
+            <button onclick="checkAnswer('question2', '正解')">陽一郎</button>
         </div>
 
         <!-- 3問目 -->
         <div id="question3" class="question" style="display: none;">
-            <h2>質問3: 日本の通貨は何ですか？</h2>
-            <button onclick="checkAnswer('question3', '正解')">円</button>
-            <button onclick="checkAnswer('question3', '不正解')">ドル</button>
-            <button onclick="checkAnswer('question3', '不正解')">ユーロ</button>
+            <h2>質問3: 手を拭く時に使うのは？</h2>
+            <button onclick="checkAnswer('question3', '正解')">ハンカチ</button>
+            <button onclick="checkAnswer('question3', '不正解')">上着</button>
+            <button onclick="checkAnswer('question3', '不正解')">紙幣</button>
         </div>
 
         <!-- プレゼントページ -->
         <div id="present-page" style="display: none;">
-            <h2>おめでとうございます！プレゼントに辿り着きました！</h2>
-            <p>ここにプレゼントの内容を表示することができます。</p>
+            <h2>おめでとうございます!賞品get!</h2>
+            <p>萩原から受け取ってください!</p>
         </div>
     </div>
 
@@ -74,4 +95,5 @@
     </script>
 
 </body>
+
 </html>
